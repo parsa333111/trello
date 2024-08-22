@@ -1,6 +1,4 @@
 # trello
-Here's the updated README in GitHub format:
-
 ---
 
 # Trello Site Implementation
