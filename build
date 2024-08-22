@@ -1,0 +1,77 @@
+#!/bin/bash
+
+build_backend () {
+    docker build -t backend:0.1.0 ./backend
+}
+
+build_frontend () {
+    cd frontend
+    npm run build
+    cd ..
+}
+
+start () {
+    build_frontend
+    docker compose -p web up -d
+}
+
+stop () {
+    docker compose -p web down
+}
+
+generate_certs () {
+    mkdir -p assets/certs/
+    openssl req -newkey rsa:2048 -nodes -keyout assets/certs/nginx.key -x509 -days 365 -out assets/certs/nginx.crt
+}
+
+trust_certs_linux () {
+    cp assets/certs/nginx.crt /usr/local/share/ca-certificates/
+    update-ca-certificates
+}
+
+help () {
+    echo "
+    builds the backend or frontend based on the request     -->     --build
+    starts the containers without building the image        -->     --up
+    stops the containers and delete them                    -->     --down
+    stops the containers and starts them agian              -->     --restart           [-r]
+    generates new certificates for nginx                    -->     --generate_certs
+    copies the certificate to the ca-certificates           -->     --trust_certs
+    "
+}
+
+command=$1
+
+if [[ $command == "--build" ]]
+then
+    sub_command=$2
+
+    if [[ $sub_command == "b" ]]
+    then
+        build_backend
+    elif [[ $sub_command == "f" ]]
+    then
+        build_frontend
+    else
+        build_backend
+        build_frontend
+    fi
+elif [[ $command == "--up" ]] || [[ $command == "-u" ]]
+then
+    start
+elif [[ $command == "--down" ]] || [[ $command == "-d" ]]
+then
+    stop
+elif [[ $command == "--restart" ]] || [[ $command == "-r" ]]
+then
+    stop
+    start
+elif [[ $command == "--generate_certs" ]]
+then
+    generate_certs
+elif [[ $command == "--trust_certs" ]]
+then
+    trust_certs_linux
+else
+    help
+fi

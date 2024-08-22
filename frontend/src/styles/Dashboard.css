@@ -1,0 +1,346 @@
+.dashboard {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dashboard .header {
+    width: 97vw;
+    height: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard .left-container {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard .right-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.dashboard .logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 34px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dashboard .logo-container img {
+    height: 18px;
+    filter: brightness(20%);
+    margin-right: 0px;
+}
+
+.dashboard .settings-container {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+    position: relative;
+    cursor: pointer;
+}
+
+.dashboard .settings-container img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    height: 22px;
+    margin-left: -15px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.dashboard .settings-container img:hover {
+    filter: brightness(60%);
+}
+
+.dashboard .create-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    max-height: 35px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.dashboard .create-btn:hover {
+    background-color: #0056b3;
+}
+
+.dashboard .content {
+    width: 80%;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dashboard .workspaces,
+.dashboard .tasks,
+.dashboard .workspace,
+.dashboard .task {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.dashboard .workspaces {
+    grid-column: 1 / 2;
+    background-color: #f4f5f7;
+}
+
+.dashboard .tasks {
+    grid-column: 2 / 3;
+    background-color: #f4f5f7;
+}
+
+.dashboard .workspace {
+    opacity: 0.9;
+    max-width: 300px;
+    transition: transform 0.2s;
+}
+
+.dashboard .task {
+    background-color: rgb(248, 246, 236);
+    max-width: 400px;
+    transition: transform 0.2s;
+}
+
+.dashboard .workspace:hover,
+.dashboard .task:hover {
+    filter: brightness(90%);
+    transform: scale(1.01);
+}
+
+.dashboard .workspace-title,
+.dashboard .task h2 {
+    display: flex;
+    align-items: center;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.dashboard .workspace-title {
+    color: rgb(254, 254, 254);
+}
+
+.dashboard .task h2 {
+    color: rgb(50, 50, 50);
+}
+
+.dashboard .workspace-description,
+.task p {
+    margin: 5px 0;
+    max-width: 300px;
+    overflow-wrap: break-word;
+}
+
+.dashboard .workspace-description {
+    color: rgb(254, 254, 254);
+}
+
+.dashboard .task p {
+    color: rgb(50, 50, 50);
+}
+
+.dashboard .board {
+    background-color: #0079bf;
+    color: white;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.dashboard .popup {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dashboard .popup .popup-row {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.dashboard .popup .popup-row:hover {
+    background-color: darkgrey;
+}
+
+.dashboard .popup .popup-row.delete-account {
+    border-bottom: none;
+    color: white;
+    background-color: #e74c3c;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.dashboard .popup .popup-row.delete-account:hover {
+    background-color: #c0392b;
+}
+
+.dashboard .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.dashboard .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.dashboard .modal form {
+    margin-bottom: 20px;
+}
+
+.dashboard .modal .form-group {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.dashboard .modal label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.dashboard .modal input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.dashboard .modal .form-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard .modal .form-actions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.dashboard .modal .form-actions .cancel-btn {
+    background-color: #818b94;
+    color: rgb(248, 246, 236);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.dashboard .modal .form-actions button:hover {
+    background-color: #0056b3;
+}
+
+.dashboard .modal .form-actions .cancel-btn:hover {
+    background-color: #697278;
+}
+
+.dashboard .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.dashboard .previous-page-btn,
+.dashboard .next-page-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dashboard .previous-page-btn:not([disabled]):hover,
+.dashboard .next-page-btn:not([disabled]):hover {
+    background-color: #0056b3;
+}
+
+.dashboard .previous-page-btn:disabled,
+.dashboard .next-page-btn:disabled {
+    background-color: #b1b9c1;
+    color: rgb(248, 246, 236);
+    cursor: not-allowed;
+}
+
+.dashboard .add-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 7px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dashboard .remove-btn {
+    margin-right: 60px;
+    background-color: #818b94;
+    color: rgb(248, 246, 236);
+    border: none;
+    padding: 1px 3px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dashboard .add-btn:hover {
+    background-color: #0056b3;
+}
+
+.dashboard .remove-btn:hover {
+    background-color: #697278;
+}
+
+.workspace-members-list {
+    margin-top: -3px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.workspace-members-list-row {
+    margin-top: -3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}

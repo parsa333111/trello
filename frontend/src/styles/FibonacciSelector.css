@@ -1,0 +1,40 @@
+.fibonacci-selector {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.fibonacci-selector .selected-value {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: inline-block;
+    width: 60px;
+    background-color: white;
+}
+
+.fibonacci-selector .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.fibonacci-selector button {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: white;
+}
+
+.fibonacci-selector button.selected {
+    background-color: #0079bf;
+    color: white;
+}
+
+.fibonacci-selector button:hover {
+    background-color: #026aa7;
+    color: white;
+}

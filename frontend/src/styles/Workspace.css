@@ -1,0 +1,287 @@
+.workspace-page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.workspace-page .header {
+    width: 97vw;
+    height: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.workspace-page .left-container {
+    display: flex;
+    align-items: center;
+}
+
+.workspace-page .right-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+.workspace-page .right-container .delete-btn {
+    display: flex;
+    align-items: center;
+    margin-left: 36px;
+    position: relative;
+    cursor: pointer;
+}
+
+.workspace-page .logo-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 34px;
+    position: relative;
+    cursor: pointer;
+}
+
+.workspace-page .logo-container img {
+    height: 18px;
+    filter: brightness(20%);
+    margin-right: 0px;
+}
+
+.workspace-page .delete-btn,
+.workspace-page .leave-workspace-btn,
+.workspace-page .back-btn {
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    max-height: 35px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.workspace-page .leave-workspace-btn {
+    margin-right: -15px;
+}
+
+.workspace-page .delete-btn,
+.workspace-page .leave-workspace-btn {
+    background-color: #e74c3c;
+}
+
+.workspace-page .delete-btn:hover,
+.workspace-page .leave-workspace-btn:hover {
+    background-color: #c0392b;
+}
+
+.workspace-page .back-btn {
+    background-color: #007bff;
+}
+
+.workspace-page .back-btn:hover {
+    background-color: #0056b3;
+}
+
+.workspace-page .cards-section {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.workspace-page .card-list {
+    background-color: #f4f5f7;
+    border-radius: 4px;
+    padding: 20px;
+    width: 25%;
+    transition: background-color 0.3s ease;
+}
+
+.workspace-page .card-list h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+}
+
+.workspace-page .task-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workspace-page .task-card {
+    background-color: white;
+    border-radius: 4px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.workspace-page .task-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.workspace-page .task-card h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.workspace-page .task-card p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #777;
+}
+
+.workspace-page .add-card-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    width: 100%;
+    text-align: center;
+}
+
+.workspace-page .add-card-btn:hover {
+    background-color: #0056b3;
+}
+
+.workspace-page .add-card-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.workspace-page .add-card-form input,
+.workspace-page .add-card-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.workspace-page .add-card-form textarea {
+    resize: vertical;
+}
+
+.workspace-page .add-card-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.workspace-page .add-card-form button:hover {
+    background-color: #0056b3;
+}
+
+.workspace-page .add-card-form .cancel-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.workspace-page .add-card-form .cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+.workspace-page .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.workspace-page .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    position: relative;
+    text-align: center;
+}
+
+.workspace-page .main-content {
+    width: 100vw;
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+
+.workspace-page .tasks-section {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.workspace-page .members-section {
+    width: 165px;
+    background-color: #f4f5f7;
+    padding: 20px;
+    box-shadow: 1px 0 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    flex-shrink: 0;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    position: sticky;
+    top: 80px;
+}
+
+.workspace-page .members-section .member {
+    background-color: white;
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.workspace-page .members-section .member:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.workspace-page .members-section .status-icon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.workspace-page .members-section .status-icon img {
+    margin-top: 5px;
+    margin-right: 5px;
+    height: 18px;
+}
