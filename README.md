@@ -26,8 +26,8 @@ This repository contains a full-stack Trello-like web application, designed with
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/trello-site-implementation.git
-   cd trello-site-implementation
+   git clone https://github.com/parsa333111/trello.git
+   cd trello
    ```
 
 2. **Build the frontend:**
@@ -64,4 +64,5 @@ This repository contains a full-stack Trello-like web application, designed with
 - **Prometheus:** Monitoring and metrics collection
 
 ---
+project was completed by <a href="https://github.com/parsa333111">parsa333111</a> and <a href="https://github.com/skye-tan">skye-tan</a>
 
